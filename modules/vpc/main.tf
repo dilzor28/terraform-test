@@ -34,7 +34,7 @@ resource "aws_subnet" "private_subnets" {
   count                   = length(var.availability_zones)
 
   tags = {
-    Name = "${var.environment}_public_subnet_${substr(element(var.availability_zones, count.index), -1, 1)}"
+    Name = "${var.environment}_private_subnet_${substr(element(var.availability_zones, count.index), -1, 1)}"
   }
 }
 
